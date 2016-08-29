@@ -214,7 +214,7 @@
           <a href="#F" role="tab" data-toggle="tab">交通資訊<br>Transportation info.</a>
      </li>
      <li role="presentation">
-         <a target="_blank" href="http://www.gohotel.com.tw/twinstar/enaboutus.htm">活動報名<br>registration</a>
+         <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeAThAv6wDws_QQfJeyqadnTaWeblR5R10afDwii-sqrbZuiw/viewform?c=0&w=1">活動報名<br>registration</a>
         
      </li>
     </ul>
@@ -457,6 +457,46 @@ No. 158, Sec. A, Fusing Rd., Taichung City, Taiwan (台中市復興路四段158�
         </div>
     </footer>
 </div>
+
+
+<!-- 回到頂端按鈕 start -->
+<script>
+//<![CDATA[
+(function () {
+$("body").append("<img id='goTopButton' style='display: none; z-index: 5; cursor: pointer;' title='回到頂端'/>");
+var img = "http://1.bp.blogspot.com/-zMfrIkyhlVs/Uh7FePoKU8I/AAAAAAAAHnA/WA0H_vbWAWc/s1600/go-top.png",
+locatioin = 2/3, // 按鈕出現在螢幕的高度
+right = 10, // 距離右邊 px 值
+opacity = 0.3, // 透明度
+speed = 500, // 捲動速度
+$button = $("#goTopButton"),
+$body = $(document),
+$win = $(window);
+$button.attr("src", img);
+$button.on({
+mouseover: function() {$button.css("opacity", 1);},
+mouseout: function() {$button.css("opacity", opacity);},
+click: function() {$("html, body").animate({scrollTop: "600"}, speed);}
+});
+window.goTopMove = function () {
+var scrollH = $body.scrollTop(),
+winH = $win.height(),
+css = {"top": winH * locatioin + "px", "position": "fixed", "right": right, "opacity": opacity};
+if(scrollH > 20) {
+$button.css(css);
+$button.fadeIn("slow");
+} else {
+$button.fadeOut("slow");
+}
+};
+$win.on({
+scroll: function() {goTopMove();},
+resize: function() {goTopMove();}
+});
+} )();
+//]]>
+</script>
+<!-- 回到頂端按鈕 end, Design by WFU BLOG -->   
 
 </body>
 </html>
